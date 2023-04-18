@@ -1,0 +1,126 @@
+.greeting {
+    height: 100vh;
+    max-height: 1000px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(-45deg, #595ed6, #6b61dc, #5047ae, #595ed6);
+    animation: gradient 15s ease infinite;
+    z-index: 0;
+}
+
+
+.greeting__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+}
+
+.wrapper {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.greeting__description {
+    width: 40%;
+}
+
+.greeting__title {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: white;
+    font-family: "Gilroy-Bold";
+}
+
+.greeting__img {
+    width: 70%;
+    position: absolute;
+    right: -10%;
+    bottom: 12%;
+    max-width: 900px;
+    z-index: 0;
+}
+
+.greeting__text {
+    font-size: 20px;
+    font-family: "Gilroy-Regular";
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.greeting__wrapper:before, .greeting__wrapper:after {
+    background-image: radial-gradient(var(--dot-color) 1.5px, transparent 2px);
+    background-size: var(--point-gap-width) var(--point-gap-height);
+    background-position: calc(var(--point-gap-width) / 2) calc(var(--point-gap-height) / 2);
+}
+
+.greeting__wrapper:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scale(1.3, 1.3);
+}
+
+.greeting__wrapper:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: -15%;
+    right: -15%;
+    mix-blend-mode: soft-light;
+}
+
+.greeting .greeting__wrapper:before {
+    animation: 3.2s linear move infinite;
+}
+
+.greeting .greeting__wrapper:after {
+    animation: 5.2s linear move infinite;
+}
+
+
+@keyframes move {
+    0% {
+        background-position: calc(var(--point-gap-width) / 2) calc(var(--point-gap-height) / 2);
+    }
+
+    100% {
+        background-position: calc(var(--point-gap-width) / 2) calc(var(--point-gap-height) / 2 * -1);
+    }
+}
