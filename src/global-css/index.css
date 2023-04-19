@@ -27,11 +27,12 @@ blockquote,
 dl,
 dd {
   margin: 0;
+
 }
 
-ul[class],
-ol[class] {
-  list-style: none;
+ul, ul li {
+	list-style: none;
+  padding: 0;
 }
 
 a {

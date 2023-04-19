@@ -1,0 +1,9 @@
+.svg__footer {
+    position: absolute;
+    top: -2%;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    z-index: -1;
+}
+
