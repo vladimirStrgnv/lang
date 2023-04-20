@@ -1,0 +1,26 @@
+.reg__svg {
+    position: absolute;
+    z-index: -1;
+    bottom: 0%;
+    animation: wave-registr 0.5s ease;
+    animation-fill-mode: forwards;
+}
+
+.reg__svg path {
+    fill: #2c2647;
+
+}
+
+@keyframes wave-registr{
+    0% {
+        left: -636px;
+        width: 180%;
+        height: 47%;
+    }
+
+    100% {
+        left: 0;
+        width: 100%;
+        height: 40%;
+    }
+}
