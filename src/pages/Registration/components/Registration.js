@@ -10,15 +10,18 @@ const Registration = () => {
     <>
       <header className={styles.header}>
         <div className={`${styles.header__wrapper}`}>
-            <Logo></Logo>
+          <Logo></Logo>
         </div>
       </header>
       <section className={styles.reg}>
         <div className={`${styles.reg__wrapper} ${styles.wrapper}`}>
-            <RegForm></RegForm>
-            <img className={styles.reg__img} src={require('../assets/login.png')}></img>
-            <Svg></Svg>
-
+          <RegForm></RegForm>
+          <img
+            className={styles.reg__img}
+            src={require("../assets/login.png")}
+            alt="img"
+          ></img>
+          <Svg></Svg>
         </div>
       </section>
     </>
