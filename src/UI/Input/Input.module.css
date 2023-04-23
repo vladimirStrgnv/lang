@@ -34,6 +34,13 @@
     background: transparent;
 }
 
+.input:focus ~ .input__placeholder {
+    color: #dfd4d4;
+    transform: translateX(-5px) translateY(-14px);
+    font-size: 0.85em;
+    padding: 0 10px;
+}
+
 .input:focus {
     border-color: #dfd4d4;
 

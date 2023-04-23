@@ -1,2 +1,2 @@
-import Book from "./components/Book";
-export default Book;
+import BookPage from "./components/BookPage";
+export default BookPage;

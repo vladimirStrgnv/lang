@@ -34,7 +34,7 @@ const RegForm = () => {
           <button className={styles.reg__btn}>Зарегестрироваться</button>
           <div className={styles['login-info']}>
             <span>Уже с нами? </span>
-            <Link to='/auth' className={styles['login-link']}>Да, Войти!</Link>
+            <Link to='/login' className={styles['login-link']}>Да, Войти!</Link>
           </div>
       </form>
       <Modal modalState={modalState} setActive={setModalState}></Modal>

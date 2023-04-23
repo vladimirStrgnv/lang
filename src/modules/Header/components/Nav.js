@@ -8,13 +8,14 @@ const Nav = () => {
   return (
     <nav className={styles.nav}>
       <ul className={styles["nav__links-list"]}>
-        {NavItemsValue.map(itemValue => 
+        {NavItemsValue.map((itemValue ,index) => 
             <NavItem 
+                key={index}
                 path={itemValue.path}
                 text={itemValue.text}
             ></NavItem>)}
       </ul>
-      <Button path='auth'></Button>
+      <Button path='login'></Button>
     </nav>
   );
 };
