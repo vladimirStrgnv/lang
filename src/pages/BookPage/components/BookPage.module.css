@@ -23,9 +23,12 @@
     font-size: 2rem;
     font-family: 'Gilroy-Heavy';
     border: none;
-    background-color: #fbfcff;
     margin-top: 1rem;
     cursor: pointer;
+}
+
+.book__nav-links-list li:first-child {
+    margin-right: 0.60rem;
 }
 
 .book__nav-links-list li:first-child::after {
@@ -34,15 +37,14 @@
     color: #d0d0d0;
 }
 
-.book__glossary-link {
-    margin-left: 0.7%;
+
+
+.active-link {
+    color: #FFC53D;
 }
 
-.level__title {
-    color: #2c2647;
-    font-family: 'Gilroy-Bold';
-    font-size: 1rem;
-    margin-bottom: 1rem;
+.inactive-link {
+    color: #2c2647; 
 }
 
 

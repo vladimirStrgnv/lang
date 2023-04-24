@@ -13,7 +13,6 @@ const Header = () => {
           <Nav></Nav>
         </div>
       </header>
-      <Outlet></Outlet>
     </React.Fragment>
   )
 }
