@@ -1,13 +1,10 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import Header from '../../../modules/Header/index';
 import styles from './BookPage.module.css';
 import SvgTop from './SvgTop';
 import { NavLink, Outlet } from 'react-router-dom';
 
 const BookPage = () => {
-  const dispatch = useDispatch();
-  const globalState = useSelector(currenTstate => currenTstate);
   return (
     <>
       <Header></Header>
@@ -20,8 +17,8 @@ const BookPage = () => {
         <div className={`${styles.book__wrapper} ${styles.wrapper}`}>
           <nav className={styles.book__nav}>
             <ul className={styles['book__nav-links-list']}>
-              <li><NavLink to='/teach/book' className={({isActive}) => isActive ? styles['active-link'] : styles['inactive-link']}>Учебник</NavLink></li>
-              <li><NavLink to='/teach/glossary' className={({isActive}) => isActive ? styles['active-link'] : styles['inactive-link']}>Словарь</NavLink></li>
+              <li><NavLink to='book' className={({isActive}) => isActive ? styles['active-link'] : styles['inactive-link']}>Учебник</NavLink></li>
+              <li><NavLink to='glossary' className={({isActive}) => isActive ? styles['active-link'] : styles['inactive-link']}>Словарь</NavLink></li>
             </ul>
           </nav>
           <Outlet></Outlet>

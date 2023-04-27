@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './Book.module.css';
 import LevelBtn from './LevelBtn';
 import btnsData from '../consts/consts';
+import Page from './Page';
+import { Route, Routes } from 'react-router-dom';
 
 const Book = () => {
   return (
@@ -18,6 +20,15 @@ const Book = () => {
                 ></LevelBtn>
             )}
         </div>
+        <Routes>
+          <Route path='A1' element={<Page></Page>}></Route>   
+          <Route path='A2' element={<Page></Page>}></Route>        
+          <Route path='B1' element={<Page></Page>}></Route>        
+          <Route path='B2' element={<Page></Page>}></Route>        
+          <Route path='C1' element={<Page></Page>}></Route>        
+          <Route path='C2' element={<Page></Page>}></Route>        
+
+        </Routes>
       </nav>
     </section>
   );

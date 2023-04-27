@@ -15,7 +15,7 @@ const Nav = () => {
                 text={itemValue.text}
             ></NavItem>)}
       </ul>
-      <Button path='login'></Button>
+      <Button path='/login'></Button>
     </nav>
   );
 };
