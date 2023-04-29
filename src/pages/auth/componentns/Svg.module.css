@@ -3,6 +3,7 @@
     bottom: 0%;
     animation: wave-registr-login 0.5s ease;
     animation-fill-mode: forwards;
+    z-index: -1;
 }
 
 .auth__svg path {

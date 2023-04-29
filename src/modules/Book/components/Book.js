@@ -4,8 +4,10 @@ import LevelBtn from './LevelBtn';
 import btnsData from '../consts/consts';
 import Page from './Page';
 import { Route, Routes } from 'react-router-dom';
+import Api from '../../../api/api';
 
 const Book = () => {
+  console.log(Api.getWords())
   return (
     <section>
       <nav>
