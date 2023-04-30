@@ -2,12 +2,12 @@ import React from 'react';
 import styles from './Book.module.css';
 import LevelBtn from './LevelBtn';
 import btnsData from '../consts/consts';
-import Page from './Page';
+import Page from './BookSection';
 import { Route, Routes } from 'react-router-dom';
 import Api from '../../../api/api';
 
 const Book = () => {
-  console.log(Api.getWords())
+  console.log(Api.getWords(1,1))
   return (
     <section>
       <nav>
