@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Pagination.module.css';
 
-const Pagination = () => {
+const Pagination = (props) => {
   const [currentButton, setCurrentButton] = useState(1);
   const [arrOfCurrButtons, setArrOfCurrButtons] = useState([]);
 
 
-  const pagesCount = 20;
   const numberOfPages = [];
-  for (let i = 1; i <= pagesCount; i++) {
+  for (let i = 1; i <= props.pagesCount; i++) {
     numberOfPages.push(i)
   }
 
   useEffect(()=>{
     let tempNumberOfPages = [...arrOfCurrButtons];
     let dotsInitial = '...'
-    let dotsLeft = '... '
-    let dotsRight = ' ...'
+    let dotsLeft = '...'
+    let dotsRight = '...'
 
     if (numberOfPages.length < 6) {
       tempNumberOfPages = numberOfPages
@@ -55,6 +54,10 @@ const Pagination = () => {
     }
 
     setArrOfCurrButtons(tempNumberOfPages)
+    if (currentButton !== '...') {
+      props.setCurrentPage(currentButton-1)
+    }
+
   }, [currentButton]);
 
 
@@ -64,9 +67,10 @@ const Pagination = () => {
           className={`${currentButton === 1 ? styles.disabled : ''}`}
           onClick = {() => setCurrentButton(prev => prev === 1? prev : prev - 1)}
         >Prev</a>
-        {arrOfCurrButtons.map(page => {
+        {arrOfCurrButtons.map((page, index) => {
           return (
             <a href="#!" 
+            key={index}
             className={currentButton === page ? styles.active : ''}
             onClick = {() => setCurrentButton(page)}
             >{page}</a>
@@ -80,4 +84,4 @@ const Pagination = () => {
   )
 }
 
-export default Pagination
+export default Pagination;

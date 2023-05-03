@@ -1,0 +1,12 @@
+.page__title {
+    font-size: 2rem;
+    font-family: 'Gilroy-Heavy';
+    color: #2c2647;
+}
+
+.words-container {
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+}
