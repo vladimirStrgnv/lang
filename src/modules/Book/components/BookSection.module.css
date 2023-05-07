@@ -1,12 +1,12 @@
-.page__title {
-    font-size: 2rem;
-    font-family: 'Gilroy-Heavy';
-    color: #2c2647;
+.words-section-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .words-container {
-    width: 85%;
+    width: 65%;
+    padding-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px 20px;
+    gap: 50px 5px;
 }

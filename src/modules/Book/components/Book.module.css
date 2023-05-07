@@ -6,8 +6,14 @@
 }
 
 .levels__wrapper {
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    margin-bottom: 2rem;
+}
+
+.page__title {
+    font-size: 2rem;
+    font-family: 'Gilroy-Heavy';
+    color: #2c2647;
 }

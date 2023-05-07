@@ -1,7 +1,8 @@
 import { createStore } from 'redux';
 
 const defaultState = {
-  auth: JSON.parse(localStorage.getItem('auth'))
+  auth: JSON.parse(localStorage.getItem('auth')),
+  baseUrl: 'http://localhost:2000'
 };
 
 const reducer = (state = defaultState, action) => {

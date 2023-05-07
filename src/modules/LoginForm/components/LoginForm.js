@@ -10,8 +10,6 @@ const LoginForm = () => {
   const [isUserLogin, setStatus] = useState(false);
   const { emailDispatch, nameDispatch, state } = useCreateStore();
   const dispatch = useDispatch();
-  const globalState = useSelector(currenTstate => currenTstate);
-  console.log(1)
 
   const sendRequest = async (e) => {
     e.preventDefault();
