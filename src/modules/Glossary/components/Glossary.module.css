@@ -1,0 +1,24 @@
+.glossary__nav {
+    padding-top: 10px;
+}
+
+.levels__wrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.glossary nav h2 {
+    color: #2c2647;
+    font-family: 'Gilroy-Bold';
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.page__title{
+    color: #2c2647;
+    font-size: 2rem;
+    font-family: 'Gilroy-Heavy';
+}
+

@@ -4,11 +4,12 @@ import styles from './WordTable.module.css';
 const Word = (props) => {
   return (
     <div 
-      className={props.id === props.currentWordId? `${styles['word-container']} ${styles.active}` : styles['word-container']}
+      className={props.id === props.currentWordId? `${styles['word-container']} ${styles.active}` : `${styles['word-container']}`}
       onClick={()=> props.setCurrentWordId(props.id)}
     >
         <div>{props.word}</div>
         <div>{props.translate}</div>
+        <div className={`${styles.word__circle}  ${styles[props.difficulty]}`}></div>
     </div>
   )
 }

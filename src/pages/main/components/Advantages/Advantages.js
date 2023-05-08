@@ -10,8 +10,9 @@ const Advantages = () => {
             <h2 className={styles.advantages__title}>Оцените преимущества <br/>приложения.</h2>
             <h3 className={styles.advantages__subtitle}>Зарегистрируйтесь, чтобы использовать все возможности.</h3>
             <ul className={styles.advantages__list}>
-                {cardsInfo.map(cardsInfo => 
+                {cardsInfo.map((cardsInfo, index) => 
                 <AdvantagesItem
+                    key={index}
                     img={cardsInfo.img}
                     title={cardsInfo.title}
                     text={cardsInfo.text}

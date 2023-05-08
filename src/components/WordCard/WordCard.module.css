@@ -8,7 +8,6 @@
 .wordcard__container {
     width: 280px;
     background-color: #f3f4f8;
-
 }
 
 .wordcard__info {
@@ -21,13 +20,13 @@
 }
 
 .wordcard__container h2 {
-    margin-bottom: 5px;
+    margin-top: 5px;
     color: #2c2647;
     font-family: 'Gilroy-Regular';
 }
 
 .wordcard__container h3 {
-    margin-bottom: 5px;
+    margin-top: 5px;
     color: #2c2647;
     font-family: 'Gilroy-Regular';
 }
@@ -51,11 +50,15 @@
     cursor: pointer;
 }
 
+.wordcard__btns-container {
+    margin-top: 10px;
+    display: flex;
+}
+
 .wordcard__add-difficult-btn {
-    margin-bottom: 10px;
-    margin-top: 5px;
+    margin-right: 5px;
     padding: 5px;
     border-radius: 10px;
-    font-size: 0.70rem;
+    font-size: 0.60rem;
     background-color: #FFC53D;
 }

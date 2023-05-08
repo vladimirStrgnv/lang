@@ -18,8 +18,8 @@ class Api {
     return data;
   }
 
-  createUserWord = async (userId, wordId, difficulty = '' ) => {
-    const response = await fetch(`${this.state.baseUrl}/users/${userId}/words/${wordId}`, {
+  createUserWord = async (wordId, difficulty = '' ) => {
+    const response = await fetch(`${this.state.baseUrl}/users/${this.state.auth.userId}/words/${wordId}`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${this.state.auth.token}`,
@@ -30,6 +30,45 @@ class Api {
     });
     const data = await response.json();
     return data;
+  }
+
+   getUserWords = async () => {
+    const response = await fetch(`${this.state.baseUrl}/users/${this.state.auth.userId}/words`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${this.state.auth.token}`,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await response.json();
+    return data;
+  }
+
+   getAggregatedWords = async (section, page, wordsPerPage = 20) => {
+    const filter = `%7B%22$and%22%3A%5B%7B%22group%22%3A${section}%7D%2C%7B%22page%22%3A${page}%7D%5D%7D`;
+    const response = await fetch(`${this.state.baseUrl}/users/${this.state.auth.userId}/aggregatedWords?wordsPerPage=${wordsPerPage}&filter=${filter}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${this.state.auth.token}`,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await response.json();
+    return data[0].paginatedResults;
+  }
+
+  deleteUserWord = async (wordId) => {
+    const response = await fetch(`${this.state.baseUrl}/users/${this.state.auth.userId}/words/${wordId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${this.state.auth.token}`,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+    });
+    return response;
   }
 }
 

@@ -5,6 +5,7 @@ import BookPage from './pages/BookPage/index';
 import Auth from './pages/Auth/index';
 import Registration from './pages/Registration/index';
 import Book from './modules/Book/index';
+import Glossary from './modules/Glossary/index';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Route path='/' element={<MainPage></MainPage>}></Route>  
       <Route path='/teach' element={<BookPage></BookPage>}>
         <Route index path='book' element={<Book></Book>}></Route>
-        <Route path='glossary/' /> 
+        <Route path='glossary/' element={<Glossary></Glossary>}/> 
       </Route>
       <Route path='/login' element={<Auth></Auth>}></Route>
       <Route path='/registration' element={<Registration></Registration>}></Route>
