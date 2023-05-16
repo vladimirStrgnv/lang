@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './WordCard.module.css';
 import { useSelector } from 'react-redux'; 
-import api from '../../api/api';
 
 function createMarkup(text) { return {__html: text}; };
 
-
-
 const WordCard = (props) => {
   const url = useSelector((state) => state.baseUrl);
-  console.log(props.wordData)
-  if (props.wordData.id) {
+  if (props.wordData.id || props.wordData._id) {
     return (
       <article className={styles.wordcard}>
         <div className={styles.wordcard__container}>
@@ -34,14 +30,14 @@ const WordCard = (props) => {
               />
             </div>
             <div className={styles["wordcard__btns-container"]}>
-              {props.btnsData.map((btnData, index) => {
+              {props.auth && props.btnsData.map((btnData, index) => {
                 return (
                   <button
                     key={index}
-                    className={styles["wordcard__add-difficult-btn"]}
+                    className={props.wordData.userWord?.difficulty?`${styles.inactive} ${styles["wordcard__btn"]}` : styles["wordcard__btn"]}
                     onClick={() => {
                       btnData.reqFunc(
-                        props.wordData.id,
+                        props.wordData.id || props.wordData._id,
                         btnData.difficulty
                       );
                     }}

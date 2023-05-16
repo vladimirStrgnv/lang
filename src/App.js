@@ -6,6 +6,8 @@ import Auth from './pages/Auth/index';
 import Registration from './pages/Registration/index';
 import Book from './modules/Book/index';
 import Glossary from './modules/Glossary/index';
+import GamePage from './pages/Games/index';
+import Savannah from './pages/Games/components/Savannah';
 
 function App() {
   return (
@@ -16,7 +18,11 @@ function App() {
         <Route path='glossary/' element={<Glossary></Glossary>}/> 
       </Route>
       <Route path='/login' element={<Auth></Auth>}></Route>
-      <Route path='/registration' element={<Registration></Registration>}></Route>
+      <Route path='/registration' element={<Registration></Registration>}></Route> 
+      <Route path='/games' element={<GamePage></GamePage>}>
+        <Route  path='savannah' element={<Savannah></Savannah>}></Route>
+        <Route  path='audiocall' element={<Book></Book>}></Route>
+      </Route>
     </Routes>
     
   );

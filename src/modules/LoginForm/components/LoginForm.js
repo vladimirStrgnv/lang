@@ -29,7 +29,7 @@ const LoginForm = () => {
   };
   return (
     <form className={styles["login-form"]} onSubmit={sendRequest}>
-      {isUserLogin && <Navigate to="/teach/book"/>}
+      {isUserLogin && <Navigate to="/"/>}
       <h2 className={styles["login-form__title"]}>Уже с нами?</h2>
       <h3 className={styles["login-form__subtitle"]}>
         Войди в свой аккаунт Lang!

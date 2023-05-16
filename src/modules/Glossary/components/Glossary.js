@@ -6,10 +6,12 @@ import Api from '../../../api/api';
 import { useEffect } from 'react';
 import BookSection from '../../../components/BookSection.js/BookSection';
 import btnsData from '../consts/consts';
+import { useSelector } from 'react-redux';
 
 const Glossary = () => {
   const {sectionDispatch, wordsDispatch, pageDispatch, wordDispatch, wordIdDispatch, difficultyDispatch, deleteWordDispatch, state} = useCreateStore();
   const {section, words, page, wordId, word, difficulty} = state;
+  const auth = useSelector((state) => state.auth);
   useEffect(()=>{
     const fetch = async () => {
       const wordsRequest = await Api.getAggregatedWords(section, page);
@@ -18,7 +20,7 @@ const Glossary = () => {
       wordsDispatch(wordsPage);
       wordDispatch(currentWord);
       if (wordsPage.length) {
-        if (!wordId) wordIdDispatch(wordsPage[0]._id)
+        if (!wordId) wordIdDispatch(wordsPage[0]._id);
       }
     };
     fetch();
@@ -62,6 +64,7 @@ const Glossary = () => {
       </nav>
       <h3 className={styles.page__title}>Слова</h3>
       <BookSection
+          auth = {auth}
           words={words}
           section={section}
           wordId={wordId}

@@ -7,20 +7,23 @@ import useCreateStore from '../store/store'
 import Api from '../../../api/api';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import api from '../../../api/api';
 
 const Book = () => {
-  const {sectionDispatch, wordsDispatch, pageDispatch, wordDispatch, wordIdDispatch, state} = useCreateStore();
+  const {sectionDispatch, wordsDispatch, pageDispatch, wordDispatch, wordIdDispatch, wordDataDispatch, state} = useCreateStore();
   const {section, words, page, wordId, word} = state;
-  const auth = useSelector(state => state.auth);
+  const auth = useSelector((state) => state.auth);
   useEffect(()=>{
     const fetch = async () => {
-      const wordsRequest = auth? await api.getAggregatedWords(section, page) : await Api.getWords(section, page);
-      console.log(wordsRequest)
-      const currentWord = await Api.getWord(wordId);
+      const wordsRequest = auth? await Api.getAggregatedWords(section, page) : await Api.getWords(section, page);
+      const currentWord = auth && wordId != ''? await Api.getUserWord(wordId) : await Api.getWord(wordId);
+      if (wordsRequest == undefined) {
+        throw new Error('ошибка сети')
+      }
       wordsDispatch(wordsRequest);
       wordDispatch(currentWord);
-      if (!wordId) wordIdDispatch(wordsRequest[0].id || wordsRequest[0]._id)
+      if (wordsRequest?.length) {
+        if (!wordId) wordIdDispatch(wordsRequest[0].id || wordsRequest[0]._id);
+      }
     };
     fetch();
   }, [page, section, wordId]);
@@ -44,6 +47,7 @@ const Book = () => {
         </nav>
         <h2 className={styles.page__title}>Слова</h2>
         <BookSection
+          auth={auth}
           words={words}
           section={section}
           wordId={wordId}
@@ -55,12 +59,18 @@ const Book = () => {
             {
               title: 'В СЛОЖНЫЕ СЛОВА',
               difficulty: 'difficulty',
-              reqFunc: Api.createUserWord
+              reqFunc: (id, difficulty) => {
+                Api.createUserWord(id, difficulty)
+                wordDataDispatch(id, difficulty)
+              }
             },
             {
               title: 'В ИЗУЧЕННЫЕ СЛОВА',
               difficulty: 'learned',
-              reqFunc: Api.createUserWord
+              reqFunc: (id, difficulty) => {
+                Api.createUserWord(id, difficulty)
+                wordDataDispatch(id, difficulty)
+              }
             }
           ]}
         ></BookSection>

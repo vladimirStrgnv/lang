@@ -1,0 +1,14 @@
+.svg {
+    display: block;
+    cursor: pointer;
+    width: 20px;
+}
+
+.svg line {
+    stroke: #000;
+    stroke-width: 5;
+}
+
+.svg:hover line {
+    stroke: red;
+}

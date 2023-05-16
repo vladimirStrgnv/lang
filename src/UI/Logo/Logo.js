@@ -3,9 +3,9 @@ import styles from './Logo.module.css';
 import { Link } from 'react-router-dom';
 
 
-const Logo = () => {
+const Logo = (props) => {
   return (
-    <Link to='/' ><div className={styles.logo}>Lang.</div></Link>
+    <Link to='/' ><div className={`${styles.logo} ${props.style}`}>Lang.</div></Link>
   )
 }
 

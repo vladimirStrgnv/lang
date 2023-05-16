@@ -1,5 +1,5 @@
 import styles from './BookSection.module.css';
-import Pagination from '../../modules/Book/components/Pagination';
+import Pagination from '../Pagination/Pagination';
 import WordTable from '../WordTable/WordTable';
 import WordCard from '../WordCard/WordCard';
 
@@ -27,6 +27,7 @@ const BookSection = (props) => {
           )}
         </div>
         {<WordCard 
+          auth={props.auth}
           wordData={props.wordData}
           btnsData = {props.wordsChangingBtns}
         ></WordCard>}

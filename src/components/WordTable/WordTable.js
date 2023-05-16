@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './WordTable.module.css';
 
 const Word = (props) => {
@@ -9,7 +8,7 @@ const Word = (props) => {
     >
         <div>{props.word}</div>
         <div>{props.translate}</div>
-        <div className={`${styles.word__circle}  ${styles[props.difficulty]}`}></div>
+        <div className={props.difficulty?`${styles.word__circle}  ${styles[props.difficulty]}`: `${styles.word__circle} `}></div>
     </div>
   )
 }
